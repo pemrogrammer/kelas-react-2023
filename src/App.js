@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import ShowData from "./ShowData";
+import ShowDataClone from "./ShowDataClone";
+
+export const DefaultContext = React.createContext('default');
 
 function App() {
+
+
+  // useEffect(() => {
+  //   setShowCount(count);
+  // }, [count]);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <DefaultContext.Provider value="coba state">
+      <ShowData name="haidi" />
+      <ShowDataClone />
+    </DefaultContext.Provider>
   );
 }
 
